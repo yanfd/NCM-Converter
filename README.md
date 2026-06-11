@@ -1,8 +1,10 @@
 ![](https://image.yanfd.cn/images/2026/06/github-header-banner%20%281%29)
 
-跨平台 NCM 文件转换器，将WYY音乐加密格式（.ncm）转换为标准 MP3/FLAC 文件，保留元数据和封面。
+跨平台 NCM 文件转换器，将WYY音乐加密格式（.ncm）转换为标准 MP3 文件。
 
 基于 [Tauri 2](https://tauri.app) 构建，原生跨平台，安装包约 3MB。
+
+![](https://image.yanfd.cn/images/2026/06/20260611200414458)
 
 ## 安装
 

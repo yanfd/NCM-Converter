@@ -63,4 +63,4 @@ Actions 会创建一个 draft release，包含：
 
 ## 致谢
 
-原始 Python 实现：[ncmdump](https://github.com/anonymous5l/ncmdump)
+原始 Python 实现：[ncmdump](https://github.com/lissettecarlr/ncmdump)

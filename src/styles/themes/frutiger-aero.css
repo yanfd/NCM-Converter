@@ -1,0 +1,296 @@
+/* Frutiger Aero: glossy, nature-inspired, dreamy */
+[data-theme="frutiger-aero"] {
+  --bg: #b8e4f0;
+  --surface: rgba(255, 255, 255, 0.22);
+  --surface-hover: rgba(255, 255, 255, 0.32);
+  --surface-active: rgba(255, 255, 255, 0.4);
+  --border: rgba(255, 255, 255, 0.35);
+  --border-subtle: rgba(255, 255, 255, 0.2);
+  --ink: #0f2e4a;
+  --ink-muted: #2a5a7a;
+  --ink-faint: #4a8aaa;
+  --accent: #00aaff;
+  --accent-hover: #0088dd;
+  --accent-ink: #fff;
+  --success: #00c853;
+  --success-bg: rgba(0, 200, 83, 0.15);
+  --danger: #ff3d57;
+  --danger-bg: rgba(255, 61, 87, 0.12);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --panel-bg: rgba(255, 255, 255, 0.18);
+  --panel-blur: 24px;
+  --ctx-bg: rgba(255, 255, 255, 0.3);
+  --ctx-shadow: 0 8px 40px rgba(0, 100, 180, 0.2);
+  --player-bg: rgba(255, 255, 255, 0.12);
+  --dropzone-bg: rgba(255, 255, 255, 0.08);
+  --font: "Segoe UI", "SF Pro Display", system-ui, sans-serif;
+}
+
+/* Background: sky gradient with light spots */
+[data-theme="frutiger-aero"] body {
+  background: linear-gradient(160deg,
+    #87ceeb 0%,
+    #a8e6cf 25%,
+    #88d8b0 45%,
+    #6cc4d0 65%,
+    #4facfe 85%,
+    #00f2fe 100%
+  );
+  background-attachment: fixed;
+}
+
+/* Dreamy floating orbs */
+[data-theme="frutiger-aero"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 15% 20%, rgba(255, 255, 255, 0.35), transparent),
+    radial-gradient(ellipse 500px 500px at 80% 70%, rgba(0, 200, 255, 0.15), transparent),
+    radial-gradient(ellipse 300px 300px at 50% 90%, rgba(100, 255, 180, 0.12), transparent);
+}
+
+/* Glass panels */
+[data-theme="frutiger-aero"] .panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(var(--panel-blur));
+  -webkit-backdrop-filter: blur(var(--panel-blur));
+  border: 1px solid var(--border);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 4px 24px rgba(0, 80, 160, 0.08);
+  border-radius: 0;
+}
+
+[data-theme="frutiger-aero"] .panel--left {
+  border-right: 1px solid var(--border);
+  border-radius: 0;
+}
+
+[data-theme="frutiger-aero"] .panel__header {
+  background: rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+[data-theme="frutiger-aero"] .panel__footer {
+  background: rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+/* Dropzone: bubbly glass */
+[data-theme="frutiger-aero"] .dropzone {
+  background: var(--dropzone-bg);
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="frutiger-aero"] .dropzone:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow:
+    inset 0 2px 8px rgba(255, 255, 255, 0.3),
+    0 0 20px rgba(0, 170, 255, 0.1);
+}
+
+[data-theme="frutiger-aero"] .dropzone__icon {
+  color: var(--accent);
+  filter: drop-shadow(0 2px 4px rgba(0, 170, 255, 0.3));
+}
+
+/* File items: glass cards */
+[data-theme="frutiger-aero"] .file-item {
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+[data-theme="frutiger-aero"] .file-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 12px rgba(0, 120, 200, 0.08);
+}
+
+[data-theme="frutiger-aero"] .file-item--playing {
+  background: rgba(0, 170, 255, 0.15);
+  border-color: rgba(0, 170, 255, 0.3);
+  box-shadow: 0 0 16px rgba(0, 170, 255, 0.1);
+}
+
+/* Glossy buttons */
+[data-theme="frutiger-aero"] .btn {
+  border-radius: 12px;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="frutiger-aero"] .btn--primary {
+  background: linear-gradient(180deg, #33ccff 0%, #0088dd 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 2px 8px rgba(0, 120, 220, 0.3);
+  border: 1px solid rgba(0, 120, 220, 0.4);
+}
+
+[data-theme="frutiger-aero"] .btn--primary:hover:not(:disabled) {
+  background: linear-gradient(180deg, #44ddff 0%, #0099ee 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 4px 16px rgba(0, 120, 220, 0.4);
+}
+
+[data-theme="frutiger-aero"] .btn--ghost {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+[data-theme="frutiger-aero"] .btn--ghost:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="frutiger-aero"] .btn-icon {
+  border-radius: 8px;
+}
+
+[data-theme="frutiger-aero"] .btn-icon:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Context menu: glass */
+[data-theme="frutiger-aero"] .ctx-menu {
+  background: var(--ctx-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 14px;
+  box-shadow: var(--ctx-shadow);
+}
+
+[data-theme="frutiger-aero"] .ctx-menu__item {
+  border-radius: 10px;
+}
+
+[data-theme="frutiger-aero"] .ctx-menu__item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="frutiger-aero"] .ctx-menu__sep {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Player: glass bar */
+[data-theme="frutiger-aero"] .player {
+  background: var(--player-bg);
+  border-top: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+}
+
+[data-theme="frutiger-aero"] .player__progress-bg {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="frutiger-aero"] .player__progress-fill {
+  background: linear-gradient(90deg, #00d4ff, #0088ff);
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.4);
+}
+
+[data-theme="frutiger-aero"] .player__progress-thumb {
+  background: #fff;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.4);
+}
+
+[data-theme="frutiger-aero"] .player__btn {
+  border-radius: 12px;
+}
+
+[data-theme="frutiger-aero"] .player__btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="frutiger-aero"] .player__btn--main {
+  background: linear-gradient(180deg, #33ccff 0%, #0088dd 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 2px 8px rgba(0, 120, 220, 0.3);
+}
+
+[data-theme="frutiger-aero"] .player__btn--main:hover {
+  background: linear-gradient(180deg, #44ddff 0%, #0099ee 100%);
+}
+
+/* Spinner */
+[data-theme="frutiger-aero"] .spinner {
+  border-color: rgba(255, 255, 255, 0.3);
+  border-top-color: var(--accent);
+}
+
+/* Panel count badges */
+[data-theme="frutiger-aero"] .panel__count {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+/* Output dir */
+[data-theme="frutiger-aero"] .output-dir {
+  border-radius: 10px;
+}
+
+[data-theme="frutiger-aero"] .output-dir:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Scrollbar */
+[data-theme="frutiger-aero"] .panel__body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+[data-theme="frutiger-aero"] .panel__body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Decorative dolphin silhouette (bottom-right corner) */
+[data-theme="frutiger-aero"] .app::after {
+  content: "";
+  position: fixed;
+  bottom: -10px;
+  right: -10px;
+  width: 180px;
+  height: 120px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.06;
+  background: var(--ink);
+  clip-path: path('M10 80 Q30 20 80 40 Q100 50 90 70 Q85 80 95 85 Q110 90 120 80 Q130 70 140 75 Q150 80 145 90 Q140 100 120 95 Q100 90 90 95 Q70 100 50 95 Q30 90 20 85 Z');
+}
+
+/* Decorative bubbles */
+[data-theme="frutiger-aero"] .app::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle 8px at 10% 85%, rgba(255, 255, 255, 0.12), transparent 50%),
+    radial-gradient(circle 5px at 25% 75%, rgba(255, 255, 255, 0.1), transparent 50%),
+    radial-gradient(circle 12px at 85% 15%, rgba(255, 255, 255, 0.08), transparent 50%),
+    radial-gradient(circle 6px at 70% 80%, rgba(255, 255, 255, 0.1), transparent 50%),
+    radial-gradient(circle 4px at 45% 10%, rgba(255, 255, 255, 0.12), transparent 50%);
+}
+
+/* Ensure app content is above decorative elements */
+[data-theme="frutiger-aero"] .app > .panel {
+  position: relative;
+  z-index: 1;
+}

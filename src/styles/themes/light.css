@@ -1,0 +1,27 @@
+/* Light: clean bright theme */
+[data-theme="light"] {
+  --bg: #f5f5f7;
+  --surface: #ffffff;
+  --surface-hover: #f0f0f2;
+  --surface-active: #e8e8ec;
+  --border: #d8d8dc;
+  --border-subtle: #e8e8ec;
+  --ink: #1d1d1f;
+  --ink-muted: #6e6e73;
+  --ink-faint: #aeaeb2;
+  --accent: #0071e3;
+  --accent-hover: #0060c0;
+  --accent-ink: #fff;
+  --success: #248a3d;
+  --success-bg: rgba(36, 138, 61, 0.08);
+  --danger: #d70015;
+  --danger-bg: rgba(215, 0, 21, 0.06);
+  --radius: 8px;
+  --radius-sm: 5px;
+  --panel-bg: var(--surface);
+  --panel-blur: 0px;
+  --ctx-bg: var(--surface);
+  --ctx-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  --player-bg: transparent;
+  --dropzone-bg: transparent;
+}

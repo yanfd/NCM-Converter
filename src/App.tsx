@@ -3,6 +3,7 @@ import { invoke } from "@tauri-apps/api/core";
 import { open } from "@tauri-apps/plugin-dialog";
 import { getCurrentWindow } from "@tauri-apps/api/window";
 import { convertFileSrc } from "@tauri-apps/api/core";
+import { useTheme, type Theme } from "./hooks/useTheme";
 
 interface FileItem {
   path: string;
@@ -64,6 +65,7 @@ export default function App() {
   const [player, setPlayer] = useState<PlayerState>({
     file: null, playing: false, currentTime: 0, duration: 0,
   });
+  const { theme, setTheme, labels: themeLabels } = useTheme();
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const progressRef = useRef<HTMLDivElement | null>(null);
@@ -312,6 +314,17 @@ export default function App() {
         <div className="panel__header">
           <h2 className="panel__title">待转换</h2>
           {pending.length > 0 && <span className="panel__count">{pending.length}</span>}
+          <div className="spacer" />
+          <select
+            className="theme-select"
+            value={theme}
+            onChange={(e) => setTheme(e.target.value as Theme)}
+            title="切换主题"
+          >
+            {Object.entries(themeLabels).map(([key, label]) => (
+              <option key={key} value={key}>{label}</option>
+            ))}
+          </select>
         </div>
         <div className="panel__body">
           <div className="dropzone" onClick={handleBrowseFiles}>

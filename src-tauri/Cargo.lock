@@ -1829,6 +1829,7 @@ version = "1.0.0"
 dependencies = [
  "aes",
  "base64 0.22.1",
+ "cipher",
  "id3",
  "metaflac",
  "serde",

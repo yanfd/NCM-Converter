@@ -9,7 +9,15 @@ fn convert_files(files: Vec<String>, output_dir: Option<String>) -> Vec<ConvertR
     let out_dir = output_dir.map(PathBuf::from);
     files
         .iter()
-        .map(|f| convert_ncm(PathBuf::from(f).as_path(), out_dir.as_deref()))
+        .map(|f| {
+            let result = convert_ncm(PathBuf::from(f).as_path(), out_dir.as_deref());
+            if result.success {
+                eprintln!("[ok] {} -> {}", f, result.output_file.as_deref().unwrap_or("?"));
+            } else {
+                eprintln!("[fail] {} -> {}", f, result.error.as_deref().unwrap_or("unknown"));
+            }
+            result
+        })
         .collect()
 }
 
